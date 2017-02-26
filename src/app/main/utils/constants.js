@@ -6,25 +6,24 @@
 //************GLOBAL VARIABLES / OBJECTS *************//
 
 var CONSTANTS = {
-    
+
     //APPLICATION CONSTANTS
-    APPNAME : "akPortfolio",
-    
+    APPNAME: "akPortfolio",
+
     //WEBSERVICE CONSTANTS
-    API:{
-      BASE_URL: "http://www.anithedesigner.in/backoffice/",
-      TEST_WS: "index.php"
+    API: {
+        BASE_URL: "http://www.anithedesigner.in/backoffice/index.php",
+        TEST_WS: "index.php"
     }
-    
-    
+
+
     //OBJECTS
-    
-    
+
+
     //BOOLEANS / VARIABLES / FLAGS
-    
+
 };
 
-angular.module('whpmc').constant('CONSTANTS',(function(){
-          return CONSTANTS;
-    })()
-);
+angular.module('whpmc').constant('CONSTANTS', (function() {
+    return CONSTANTS;
+})());

@@ -1,36 +1,39 @@
+<!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>-->
 <ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
     <li class="logo">
         <a id="logo-container" href="" class="brand-logo">
             <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a>
     </li>
-    <li class="no-padding blue-grey darken-1">
+    <li class="no-padding teal darken-1">
         <ul class="collapsible collapsible-accordion">
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
-                <div class="collapsible-body">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal active"><i class="material-icons left">account_circle</i>User</a>
+                <div class="collapsible-body  blue-grey lighten-4 no-padding">
                     <ul>
-                        <li><a href="color.html">Color</a></li>
-                        <li><a href="grid.html">Grid</a></li>
-
+                        <li><a ui-sref="home.userstat"><i class="material-icons left">trending_up</i>User Statistics</a></li>
+                        <li><a ui-sref="home.userdetails"><i class="material-icons left">perm_identity</i>User Details</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Components</a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="badges.html">Badges</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
 
+            <div class="divider"></div>
+
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal"><i class="material-icons left">event</i>Event Manager</a>
+                <div class="collapsible-body blue-grey lighten-4 no-padding">
+                    <ul>
+                        <li><a ui-sref="home.eventstat"><i class="material-icons left">assessment</i>Event Statistics</a></li>
+                        <li><a ui-sref="home.createevent"><i class="material-icons left">playlist_add_check</i>Create Event</a></li>
+                        <li><a ui-sref="home.eventhistory"><i class="material-icons left">replay_10</i>Event History</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="bold active"><a class="collapsible-header waves-effect waves-teal active">JavaScript</a>
-                <div class="collapsible-body" style="display: block;">
-                    <ul>
-                        <li><a href="carousel.html">Carousel</a></li>
-                        <li><a href="collapsible.html">Collapsible</a></li>
-                        <li><a href="dialogs.html">Dialogs</a></li>
-                        <li><a href="dropdown.html">Dropdown</a></li>
 
+            <div class="divider"></div>
+
+            <li class="bold active"><a class="collapsible-header waves-effect waves-teal"><i class="material-icons left">message</i>News</a>
+                <div class="collapsible-body blue-grey lighten-4 no-padding">
+                    <ul>
+                        <!-- <li><a ui-sref="">News manager</a></li>
+                        <li><a ui-sref="">Polls & Surveys Manager</a></li>-->
                     </ul>
                 </div>
             </li>
@@ -39,8 +42,10 @@
 
     <li class="bold"><a href="themes.html" class="waves-effect waves-teal">Themes</a></li>
 </ul>
+
 <script>
     $(document).ready(function() {
         $('.collapsible').collapsible();
+        //$(".button-collapse").sideNav();
     });
 </script>

@@ -5,25 +5,24 @@
  */
 //*******This a Base controller **************//
 
-"use strict"; 
- 
- angular.module('whpmc').controller('baseCtrl',['$scope','mainService','$rootScope','$log',function($scope,mainService,$rootScope,$log){
-        var that = $scope;
-        var rootThat = $rootScope;
-        rootThat.name = 'Test';
-        that.getTestMessage = function(){
-            var url = 'http://www.anithedesigner.in/backoffice/index.php';
-            var data = {};
-            
-            mainService.doServiceCall(url,'GET',data,function(response){
-                $log.debug("Response ===>> ",response);
-                that.message = response.message;
-                
-            },function(err){
-                $log.debug("Response in err ",err);
-            });
-       
-        }
-  
-    }]);
+"use strict";
 
+angular.module('whpmc').controller('baseCtrl', ['$scope', 'mainService', '$rootScope', '$log', function($scope, mainService, $rootScope, $log) {
+    var that = $scope;
+    var rootThat = $rootScope;
+    rootThat.name = 'Test';
+    that.getTestMessage = function() {
+        var url = 'http://www.anithedesigner.in/backoffice/index.php';
+        var data = {};
+
+        mainService.doServiceCall(url, 'GET', data, function(response) {
+            $log.debug("Response ===>> ", response);
+            that.message = response.message;
+
+        }, function(err) {
+            $log.debug("Response in err ", err);
+        });
+
+    }
+
+}]);

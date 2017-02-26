@@ -8,25 +8,59 @@
 "use strict";
 
 
-angular.module('whpmc', ['ngCookies', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngRoute']);
+angular.module('whpmc', ['ngCookies', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router']);
 
 
 
-angular.module('whpmc').config(['$httpProvider', '$routeProvider',
-    function($httpProvider, $routeProvider) {
+angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider',
 
-        $routeProvider
-            .when('/', {
-                templateUrl: 'app/main/templates/main.html',
+    function($stateProvider, $urlRouterProvider) {
+
+        $stateProvider
+            .state('home', {
+                url: '',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/dashboard-statistics.html' }
+                },
                 controller: 'baseCtrl'
             })
-            .when('/dashboard-stat', {
-                templateUrl: 'app/main/templates/dashboard-statistics.html',
+            .state('home.userstat', {
+                url: '/userstat',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/user/user-statistics.html' }
+                },
                 controller: 'baseCtrl'
             })
-            .otherwise({
-                redirectTo: '/'
+            .state('home.userdetails', {
+                url: '/userdetails',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/user/user-details.html' }
+                },
+                controller: 'baseCtrl'
+            })
+            .state('home.eventstat', {
+                url: '/eventstat',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/events/event-statistics.html' }
+                },
+                controller: 'baseCtrl'
+            })
+            .state('home.createevent', {
+                url: '/create-event',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/events/create-event.html' }
+                },
+                controller: 'baseCtrl'
+            })
+            .state('home.eventhistory', {
+                url: '/event-history',
+                views: {
+                    "content@": { templateUrl: 'app/main/templates/events/event-history.html' }
+                },
+                controller: 'baseCtrl'
             });
+
+        $urlRouterProvider.otherwise('/');
 
 
         //    $stateProvider
