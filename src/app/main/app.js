@@ -41,16 +41,16 @@ angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider',
             .state('home.eventstat', {
                 url: '/eventstat',
                 views: {
-                    "content@": { templateUrl: 'app/main/templates/events/event-statistics.html' }
+                    "content@": { templateUrl: 'app/main/templates/events/event-statistics.html', controller: 'baseCtrl' }
                 },
-                controller: 'baseCtrl'
+
             })
             .state('home.createevent', {
                 url: '/create-event',
                 views: {
-                    "content@": { templateUrl: 'app/main/templates/events/create-event.html' }
+                    "content@": { templateUrl: 'app/main/templates/events/create-event.html', controller: 'eventCtrl' }
                 },
-                controller: 'baseCtrl'
+
             })
             .state('home.eventhistory', {
                 url: '/event-history',
