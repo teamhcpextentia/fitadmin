@@ -12,9 +12,10 @@ angular.module('whpmc', ['ngCookies', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ngM
 
 
 
-angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider',
+angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider','$logProvider',
 
-    function($stateProvider, $urlRouterProvider) {
+    function($stateProvider, $urlRouterProvider,$logProvider) {
+        $logProvider.debugEnabled(true);
 
         $stateProvider
             .state('home', {
@@ -42,14 +43,14 @@ angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider',
                 url: '/eventstat',
                 views: {
                     "content@": { templateUrl: 'app/main/templates/events/event-statistics.html', controller: 'baseCtrl' }
-                },
+                }
 
             })
             .state('home.createevent', {
                 url: '/create-event',
                 views: {
                     "content@": { templateUrl: 'app/main/templates/events/create-event.html', controller: 'eventCtrl' }
-                },
+                }
 
             })
             .state('home.eventhistory', {
