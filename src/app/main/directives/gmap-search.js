@@ -7,7 +7,7 @@ angular.module('whpmc').directive('googleplace', [function() {
         },
         link: function(scope, element, attrs, model) {
             var options = {
-                types: ['(cities)'],
+                //types: ['(cities)'],
                 componentRestrictions: {
                     country: 'ind'
                 }

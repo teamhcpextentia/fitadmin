@@ -4,7 +4,6 @@ angular.module('whpmc').controller('eventCtrl', ['$scope', 'mainService', '$root
     that.location_A = '';
     $log.debug("Event controller loaded....");
     that.getLocationA = function() {
-        that.gPlace;
         $log.debug(that.details);
     }
 
