@@ -12,9 +12,9 @@ angular.module('whpmc', ['ngCookies', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ngM
 
 
 
-angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider','$logProvider',
+angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider', '$logProvider',
 
-    function($stateProvider, $urlRouterProvider,$logProvider) {
+    function($stateProvider, $urlRouterProvider, $logProvider) {
         $logProvider.debugEnabled(true);
 
         $stateProvider

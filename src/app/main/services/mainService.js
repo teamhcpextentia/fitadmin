@@ -34,6 +34,14 @@ angular.module('whpmc').factory('mainService', function($http, $log) {
             });
 
             return data;
+        },
+
+        showHideWaitingLoader: function(flag) {
+            if (flag == true) {
+                $('.loading').show();
+            } else {
+                $('.loading').hide();
+            }
         }
 
     }

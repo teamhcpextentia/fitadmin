@@ -12,13 +12,14 @@ angular.module('whpmc').controller('baseCtrl', ['$scope', 'mainService', '$rootS
     var rootThat = $rootScope;
     rootThat.name = 'Test';
     that.getTestMessage = function() {
+        mainService.showHideWaitingLoader(true);
         var url = 'http://www.anithedesigner.in/backoffice/index.php';
         var data = {};
 
         mainService.doServiceCall(url, 'GET', data, function(response) {
             $log.debug("Response ===>> ", response);
             that.message = response.message;
-
+            mainService.showHideWaitingLoader(false);
         }, function(err) {
             $log.debug("Response in err ", err);
         });
