@@ -6,26 +6,30 @@
                 <div class="card-content">
                     <span class="card-title">Create a new event for Wildhogs</span>
                     <p>Create Event Form</p>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input class="validate" placeholder="" ng-model="location_A" details="origin_location" type="text" googleplace>
-                                <label for="first_name">Ride Start Location</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input class="validate" placeholder="" ng-model="location_B" details="destination_location" type="text" googleplace>
-                                <label for="first_name">Ride Destination Location</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input class="validate" type="date" class="datepicker" ng-model="event_start_date">
-                                <label>Ride Start Date</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input class="validate" type="date" class="datepicker" ng-model="event_end_date">
-                                <label>Ride End Date</label>
-                            </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="" ng-model="createEventForm.location_A" details="origin_location" type="text" googleplace>
+                            <label for="first_name">Ride Start Location</label>
                         </div>
-                    </form>
+                        <div class="input-field col s12">
+                            <input placeholder="" ng-model="createEventForm.location_B" details="destination_location" type="text" googleplace>
+                            <label for="first_name">Ride Destination Location</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="date" class="datepicker" ng-model="createEventForm.event_start_date">
+                            <label>Ride Start Date</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="date" class="datepicker" ng-model="createEventForm.event_end_date">
+                            <label>Ride End Date</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="timepicker_ampm_dark">Time am/pm ( dark theme )</label>
+                            <input id="timepicker_ampm_dark" class="timepicker" type="time">
+                        </div>
+                    </div>
+
                 </div>
                 <div class="card-action">
                     <button ng-click="getLocationA()" class="btn waves-effect waves-light right-align" type="button">Create
@@ -37,7 +41,7 @@
         <div class="col s12 m12 l6">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Current created event info</span>
+                    <span class="card-title">Current created event info {{createEventForm}}</span>
                     <p>Display info for latest created event with live user registerd</p>
                 </div>
             </div>
@@ -60,5 +64,12 @@
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+    $('.timepicker').pickatime({
+        default: 'now',
+        twelvehour: true, // change to 12 hour AM/PM clock from 24 hour
+        donetext: 'OK',
+        autoclose: true,
+        vibrate: true // vibrate the device when dragging clock hand
     });
 </script>
