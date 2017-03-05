@@ -5,24 +5,39 @@
             <div class="card hoverable">
                 <div class="card-content">
                     <span class="card-title">Create a new event for Wildhogs</span>
-                    <p>Create Event Form</p>
-
                     <div class="row">
                         <div class="input-field col s12">
+                            <select ng-model="createEventForm.event_type">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="Ride">Ride</option>
+                                <option value="Get togather">Get togather</option>
+                                <option value="Meetup">Meetup</option>
+                            </select>
+                            <label>Select event type</label>
+                        </div>
+                        <div class="input-field col s12 m12">
+                            <input placeholder="" ng-model="createEventForm.event_name" details="event_name" type="text">
+                            <label for="first_name">Event name</label>
+                        </div>
+                        <div class="input-field col s12 m6">
                             <input placeholder="" ng-model="createEventForm.location_A" details="origin_location" type="text" googleplace>
                             <label for="first_name">Ride Start Location</label>
                         </div>
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m6">
                             <input placeholder="" ng-model="createEventForm.location_B" details="destination_location" type="text" googleplace>
                             <label for="first_name">Ride Destination Location</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input type="date" class="datepicker" ng-model="createEventForm.event_start_date">
                             <label>Ride Start Date</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input type="date" class="datepicker" ng-model="createEventForm.event_end_date">
                             <label>Ride End Date</label>
+                        </div>
+                        <div class="input-field col s12 m12">
+                            <textarea id="eventInfoTxtArea" class="materialize-textarea" ng-model="createEventForm.event_description"></textarea>
+                            <label for="eventInfoTxtArea">Desciption</label>
                         </div>
                     </div>
 
@@ -35,8 +50,12 @@
             </div>
         </div>
         <div class="col s12 m12 l6">
-            <div class="card">
+            <div class="card hoverable">
                 <div class="card-content">
+                    <ng-map center="18.5204303,73.85674369999992" zoom="14">
+                        <directions draggable="true" panel="directions-panel" origin="{{createEventForm.origin_lat+','+createEventForm.origin_lng}}" destination="{{createEventForm.destination_lat+','+createEventForm.destination_lng}}">
+                        </directions>
+                    </ng-map>
                     <span class="card-title">Current created event info {{createEventForm}}</span>
                     <p>Display info for latest created event with live user registerd</p>
                 </div>
@@ -44,7 +63,7 @@
         </div>
 
         <div class="col s12 m12 l12">
-            <div class="card">
+            <div class="card hoverable">
                 <div class="card-content">
                     <p>Current event acceptd user datapics with info</p>
                 </div>
@@ -61,4 +80,5 @@
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    $('select').material_select();
 </script>
