@@ -25,124 +25,22 @@ angular.module('whpmc').config(['$stateProvider', '$urlRouterProvider', '$logPro
                 },
                 controller: 'baseCtrl'
             })
-            .state('home.userstat', {
-                url: '/userstat',
+            .state('home.register', {
+                url: '/register',
                 views: {
-                    "content@": { templateUrl: 'app/main/templates/user/user-statistics.html' }
+                    "content@": { templateUrl: 'app/main/templates/corporate/register.html' }
                 },
-                controller: 'baseCtrl'
+                controller: 'registerCtrl'
             })
-            .state('home.userdetails', {
-                url: '/userdetails',
+            .state('home.designer', {
+                url: '/designer',
                 views: {
-                    "content@": { templateUrl: 'app/main/templates/user/user-details.html' }
+                    "content@": { templateUrl: 'app/main/templates/configuration/theme-designer.html' }
                 },
-                controller: 'baseCtrl'
-            })
-            .state('home.eventstat', {
-                url: '/eventstat',
-                views: {
-                    "content@": { templateUrl: 'app/main/templates/events/event-statistics.html', controller: 'baseCtrl' }
-                }
-
-            })
-            .state('home.createevent', {
-                url: '/create-event',
-                views: {
-                    "content@": { templateUrl: 'app/main/templates/events/create-event.html', controller: 'eventCtrl' }
-                }
-
-            })
-            .state('home.eventhistory', {
-                url: '/event-history',
-                views: {
-                    "content@": { templateUrl: 'app/main/templates/events/event-history.html' }
-                },
-                controller: 'baseCtrl'
+                controller: 'designerCtrl'
             });
 
         $urlRouterProvider.otherwise('/');
-
-
-        //    $stateProvider
-        //    
-        //    .state('personal', {
-        //      url: "/personal",
-        //      templateUrl: "templates/personal.html",
-        //      controller:'personalCtrl'
-        //    })
-        //    
-        //    .state('team', {
-        //      url: "/team",
-        //      templateUrl: "templates/team.html",
-        //      controller:'personalCtrl'
-        //    })
-        //    
-        //    .state('bu', {
-        //      url: "/bu",
-        //      templateUrl: "templates/business-unit.html",
-        //      controller:'personalCtrl'
-        //    })
-        //    
-        //    .state('challenge', {
-        //      url: "/challenge",
-        //      templateUrl: "templates/challenge.html",
-        //      controller:'personalCtrl'
-        //    })
-        //    
-        //    
-        //    .state('manageChallenge', {
-        //      url: "/manage-challenge",
-        //      templateUrl: "templates/manage-challenge.html",
-        //      controller:'mainCtrl'
-        //    })
-        //    
-        //    .state('manageTeam', {
-        //      url: "/manage-team",
-        //      templateUrl: "templates/manage-team.html",
-        //      controller:'mainCtrl'
-        //    })
-        //    
-        //    .state('registerDevice', {
-        //      url: "/register-device",
-        //      templateUrl: "templates/register-device.html",
-        //      controller:'deviceManagerCtrl'
-        //    })
-        //    
-        //    .state('switchDevice', {
-        //      url: "/switch-device",
-        //      templateUrl: "templates/switch-device.html",
-        //      controller:'deviceManagerCtrl'
-        //    })
-        //    
-        //    .state('OAUTHcallback', {
-        //      url: "/oAuth-callback",
-        //      templateUrl: "templates/oAuth-callback.html",
-        //      controller:'OAuthCallbackCtrl'
-        //    });
-        //    
-        //    
-        //    
-        //    /*$stateProvider
-        //      .state('home',{
-        //        url: "/home",
-        //        views: {
-        //          'leaderboard': {
-        //            templateUrl: 'templates/home.html',
-        //            controller: 'mainCtrl'
-        //          },
-        //           'badges': {
-        //            templateUrl: 'templates/home.html',
-        //            controller: 'mainCtrl'
-        //          }
-        //         
-        //        }
-        //      });*/
-        //    
-        //    $urlRouterProvider.otherwise("/switch-device");
-
-        /*$locationProvider.html5Mode(true);
-        $locationProvider.hashPrefix('!');*/
 
 
     }

@@ -1,51 +1,38 @@
-<!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>-->
-<ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+<div class="nav-wrapper pad-left-10">
+    <a id="logo-container" href="#" class="brand-logo">FitSAP - Corporate Configuration Panel</a>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+
+<ul id="slide-out" class="side-nav fixed">
+    
     <li class="logo">
-        <a id="logo-container" href="" class="brand-logo">
-            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a>
+        <a id="logo-container" ui-sref="home" class="brand-logo">
+            <img src="app/main/assets/img/sap_logo.png">
+        </a>
     </li>
-    <li class="no-padding teal darken-1">
+    <li class="no-padding banding-color">
         <ul class="collapsible collapsible-accordion">
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal active"><i class="material-icons left">account_circle</i>User</a>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal active"><i class="material-icons left">account_circle</i>Corporate</a>
                 <div class="collapsible-body  blue-grey lighten-4 no-padding">
                     <ul>
-                        <li><a ui-sref="home.userstat"><i class="material-icons left">trending_up</i>User Statistics</a></li>
-                        <li><a ui-sref="home.userdetails"><i class="material-icons left">perm_identity</i>User Details</a></li>
+                        <li><a ui-sref="home.register"><i class="material-icons left">supervisor_account</i>Registered Corporate</a></li>
+                        <li><a ui-sref="home.designer"><i class="material-icons left">invert_colors</i>Theme Designer</a></li>
                     </ul>
                 </div>
             </li>
 
             <div class="divider"></div>
-
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal"><i class="material-icons left">event</i>Event Manager</a>
-                <div class="collapsible-body blue-grey lighten-4 no-padding">
-                    <ul>
-                        <li><a ui-sref="home.eventstat"><i class="material-icons left">assessment</i>Event Statistics</a></li>
-                        <li><a ui-sref="home.createevent"><i class="material-icons left">playlist_add_check</i>Create Event</a></li>
-                        <li><a ui-sref="home.eventhistory"><i class="material-icons left">replay_10</i>Event History</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <div class="divider"></div>
-
-            <li class="bold active"><a class="collapsible-header waves-effect waves-teal"><i class="material-icons left">message</i>News</a>
-                <div class="collapsible-body blue-grey lighten-4 no-padding">
-                    <ul>
-                        <!-- <li><a ui-sref="">News manager</a></li>
-                        <li><a ui-sref="">Polls & Surveys Manager</a></li>-->
-                    </ul>
-                </div>
-            </li>
-        </ul>
+      </ul>
     </li>
-
-    <li class="bold"><a href="themes.html" class="waves-effect waves-teal">Themes</a></li>
 </ul>
 
 <script>
     $(document).ready(function() {
         $('.collapsible').collapsible();
+        $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 240
+            closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
         //$(".button-collapse").sideNav();
     });
 </script>

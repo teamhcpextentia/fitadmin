@@ -1,13 +1,10 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//*******This a Base controller **************//
+/**
+ * this is a style controller which is responsible for dynamic theme generation
+ * **/
 
 "use strict";
 
-angular.module('whpmc').controller('baseCtrl', ['$scope', 'mainService', '$rootScope', '$log', function($scope, mainService, $rootScope, $log) {
+angular.module('whpmc').controller('styleCtrl', ['$scope', 'mainService', '$rootScope', '$log', function($scope, mainService, $rootScope, $log) {
     var that = $scope;
     var rootThat = $rootScope;
     that.fnColor = '#ccc333';

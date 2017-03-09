@@ -30,15 +30,18 @@
     -webkit-font-smoothing: antialiased;
 }
 
+/*
+    Helpers
+*/
+.pad-left-10{
+    padding-left: 2.3rem;
+}
 
 /*
     Element 
 */
 
-header,
-main {
-    padding-left: 300px;
-}
+
 
 
 /*
@@ -58,7 +61,70 @@ main {
     margin: 0px 0 0 0;
 }
 
+a.collapsible-header, a.collapsible-header i {
+    color: #fff !important;
+}
 
+li.logo{
+        margin: 10px 15px 90px 44px;
+}
+
+.logo img{
+    width: 10rem;
+}
+
+.banding-color{
+    background: #014185;
+}
+
+
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #014185;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #014185;
+     box-shadow: 0 1px 0 0 #014185;
+   }
+  
+        
+
+
+
+/*
+    Media Queries
+*/
+@media only screen and (min-width: 992px){
+    main,nav {
+        padding-left: 300px !important;
+   }
+
+  .nav-wrapper a.brand-logo {
+       font-size: 1.3rem;
+   }
+  
+}
+
+@media only screen and (max-width: 992px){
+    .nav-wrapper a.brand-logo {
+        left:0;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        font-size: 1.1rem;
+        margin-left: 14.3rem;
+    }
+    .logo.brand-logo img{
+        margin-left: 10rem;
+    }
+    .pad-left-10{
+        padding-left: 0px;
+    }
+
+    li.logo{
+        margin: 10px 15px 90px 44px;
+}
+}
 /*
     Waiting Loader
 */
